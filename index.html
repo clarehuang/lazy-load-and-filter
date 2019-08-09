@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Clare Huang">
+  <title>Lzay Load</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato|Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    .poppins {
+      font-family: 'Poppins', sans-serif;
+    }
+    .lato{
+      font-family: 'Lato', sans-serif;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" media="all" href="public/main.css" />
+</head>
+
+<body>
+  <div class="main-content">
+
+    <div class="container-fluid header">
+      <div class="header__title">
+        <h1 class="text-center poppins">THE MEMORY OF TEA</h1>
+        <button type="button" class="btn btn-primary el--center
+                  do-clipboard" data-content="CODE123">COPY CODE123</button>
+      </div>
+    </div>
+
+    <div class="container product-list margin-top-30 margin-bottom-30">
+      <div class="row">
+        <div class="col-md-12 col-lg-3">
+          <div class="product-category">
+            <h5><strong>TEA CATEGORIES</strong></h5>
+            <div class="product-category__checkbox checked" data-options="all">
+              <span></span><label>ALL</label>
+              <small class="product-category__checkbox__count" data-options="all" id="checkbox_all"></small>
+            </div>
+            <div class="product-category__checkbox" data-options="blacktea">
+              <span></span><label>BLACK TEA</label>
+              <small class="product-category__checkbox__count" data-options="blacktea"></small>
+            </div>
+            <div class="product-category__checkbox" data-options="greentea">
+              <span></span><label>GREEN TEA</label>
+              <small class="product-category__checkbox__count" data-options="greentea"></small>
+            </div>
+            <div class="product-category__checkbox" data-options="oolongtea">
+              <span></span><label>OOLONG TEA</label>
+              <small class="product-category__checkbox__count" data-options="oolongtea"></small>
+            </div>
+            <div class="product-category__checkbox" data-options="herbaltea">
+              <span></span><label>HERBAL TEA</label>
+              <small class="product-category__checkbox__count" data-options="herbaltea"></small>
+            </div>
+            <div class="product-category__checkbox" data-options="fruittea">
+              <span></span><label>FRUIT TEA</label>
+              <small class="product-category__checkbox__count" data-options="fruittea"></small>
+            </div>
+          </div>
+          <hr>
+          <div class="product-filter margin-bottom-30">
+            <button class="btn product-filter__btn" type="button" aria-haspopup="true" tabindex="1">
+              <span class="product-filter__appearance">SORT PRODUCTS BY PRICE</span> <i
+                class="fa fa-angle-down"></i></button>
+            <ul class="product-filter__menu" role="menu" aria-labelledby="menubutton1"
+              tabindex="0">
+              <li class="product-filter__menu__item" data-options="low_to_high" data-value="0"
+                data-content="PRICE: LOW TO HIGH" role="menu" tabindex="0">PRICE: LOW TO HIGH</li>
+              <li class="product-filter__menu__item" data-options="high_to_low" data-value="0"
+                data-content="PRICE: HIGH TO LOW" role="menu" tabindex="0">PRICE: HIGH TO LOW</li>
+            </ul>
+          </div>
+        </div>
+        <!-- dynamic content for product list -->
+        <div class="col-md-12 col-lg-9">
+          <div class="row card-list">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <a class="col-xs-12 col-sm-4"
+          href="https://www.pexels.com/">
+          <div class="nav-item margin-top-10">
+            <img
+              src="https://images.pexels.com/photos/1450082/pexels-photo-1450082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+            <div class="nav-item__title">
+              <h3>BEST SELLER</h3>
+              <button class="btn btn-white is-hide margin-top-10">LEARN
+                MORE</button>
+            </div>
+          </div>
+        </a>
+        <a class="col-xs-12 col-sm-4" href="https://www.pexels.com/">
+          <div class="nav-item margin-top-10">
+            <img
+              src="https://images.pexels.com/photos/2724664/pexels-photo-2724664.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+            <div class="nav-item__title">
+              <h3>BEST REVIEWED</h3>
+              <button class="btn btn-white is-hide margin-top-10">LEARN
+                MORE</button>
+            </div>
+          </div>
+        </a>
+        <a class="col-xs-12 col-sm-4" href="https://www.pexels.com/">
+          <div class="nav-item margin-top-10">
+            <img
+              src="https://images.pexels.com/photos/2365700/pexels-photo-2365700.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+            <div class="nav-item__title">
+              <h3>NEW ARRIVALS</h3>
+              <button class="btn btn-white is-hide margin-top-10">LEARN
+                MORE</button>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <footer class="container-fluid">
+          
+    </footer>
+
+    <div class="row no-margin videoWhiteSpace">
+      <div class="col-xs-12 col-md-6 no-space"></div>
+      <div class="col-xs-12"></div>
+    </div>
+  </div>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <!-- manually added - slick.min.js		 -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- manually added - two js, one is automaticallty created by webpack, and another one is manual js file		 -->
+  <script type="text/javascript" src="public/main.js"></script>
+  <script type="text/javascript" src="public/list.js"></script>
+  <script type="text/javascript" src="public/main_local.js"></script>
+
+</body>
+
+</html>
