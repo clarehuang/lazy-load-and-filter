@@ -116,11 +116,6 @@ function categoryCount(arr) {
     for (let key in categoryMap) {
       if (prodArray[i].card__body__prodName.match(categoryMap[key][0])) {
         prodArray[i].data_category = key
-      }
-    }
-    //count each category in total
-    for (let key in categoryMap) {
-      if (prodArray[i].data_category == key) {
         categoryMap[key][1] += 1
       }
     }
