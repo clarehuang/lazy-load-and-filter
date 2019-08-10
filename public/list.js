@@ -113,7 +113,7 @@ function categoryCount(arr) {
   }
   for (let i = 0; i < arr.length; i++) {
     //add category to each product
-    for (let key in categoryMap) {
+    for (const key in categoryMap) {
       if (prodArray[i].card__body__prodName.match(categoryMap[key][0])) {
         prodArray[i].data_category = key
         categoryMap[key][1] += 1
@@ -122,7 +122,7 @@ function categoryCount(arr) {
   }
   let all = 0
   //Method A: write with for...in...
-  for (let key in categoryMap) {
+  for (const key in categoryMap) {
     const countText = document.querySelector('.product-category__checkbox__count[data-options="' + key + '"]')
     all += categoryMap[key][1]
     countText.innerHTML = `(${categoryMap[key][1]})`
@@ -197,8 +197,7 @@ function prodListing(arr) {
 /* product list - checkbox fuction */
 let prodArray_checked = prodArray.slice()
 const category = document.querySelector('.product-category')
-category.addEventListener('click', categoryFilter)
-function categoryFilter(e) {
+category.addEventListener('click', (e) => {
   let matchCategory = ''
   document.querySelector('.product-filter__appearance').innerHTML = 'SORT PRODUCTS BY PRICE'
   let childrenArry = [].slice.call(document.querySelectorAll('.product-filter__menu__item'))
@@ -241,7 +240,7 @@ function categoryFilter(e) {
   }
   prodArray_checked = newArray
   prodListing(prodArray_checked)
-}
+})
 
 /* product list - filter_hover effect */
 const hover = document.querySelector('.product-filter__menu')
@@ -264,22 +263,7 @@ function mouseOut(e) {
 
 /* product list - filter_sort by price */
 const filter = document.querySelector('.product-filter')
-filter.addEventListener('click', filterOptions)
-window.addEventListener('click', (e) => {
-  let className = ['btn', 'product-filter__btn','product-filter__appearance', 'fa', 'fa-angle-down', 'product-filter__menu', 'product-filter__menu__item']
-  if(!className.some(className => e.target.classList.contains(className))){
-    document.querySelector('.product-filter__menu').classList.remove('open');
-  }
-})
-function filterOptions(e) {
-  const dropdownMenu = document.querySelector('.product-filter__menu')
-  if (dropdownMenu.classList.contains('open')) {
-    console.log('if contains open')
-    dropdownMenu.classList.remove('open')
-  } else {
-    console.log('if not contains open')
-    dropdownMenu.classList.add('open')
-  }
+filter.addEventListener('click', (e) => {
   let className = ['product-filter__menu__item', 'is-hover']
   let appearance = ""
   if (className.every(className => e.target.classList.contains(className))) {
@@ -310,5 +294,22 @@ function filterOptions(e) {
     }
     prodListing(prodArray_sorting)
   }
-}
+})
+
+/* Dropdown Menu Toggle Funciton*/
+const trigger = document.querySelector('.dropdownmenu__trigger')
+trigger.addEventListener('click', (e) => {
+  const dropdownMenu = document.querySelector('.dropdownmenu__menu')
+  if (dropdownMenu.classList.contains('open')) {
+    dropdownMenu.classList.remove('open')
+  } else {
+    dropdownMenu.classList.add('open')
+  }
+})
+window.addEventListener('click', (e) => {
+  let className = ['btn', 'product-filter__btn','dropdownmenu__trigger','product-filter__appearance', 'fa', 'fa-angle-down', 'product-filter__menu','dropdownmenu__menu', 'product-filter__menu__item']
+  if(!className.some(className => e.target.classList.contains(className))){
+    document.querySelector('.product-filter__menu').classList.remove('open');
+  }
+})
 
