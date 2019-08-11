@@ -307,7 +307,7 @@ trigger.addEventListener('click', (e) => {
   }
 })
 window.addEventListener('click', (e) => {
-  let className = ['btn', 'product-filter__btn','dropdownmenu__trigger','product-filter__appearance', 'fa', 'fa-angle-down', 'product-filter__menu','dropdownmenu__menu', 'product-filter__menu__item']
+  let className = ['btn', 'product-filter__btn','dropdownmenu__trigger','product-filter__appearance', 'fa', 'fa-angle-down', 'product-filter__menu','dropdownmenu__menu']
   if(!className.some(className => e.target.classList.contains(className))){
     document.querySelector('.product-filter__menu').classList.remove('open');
   }
